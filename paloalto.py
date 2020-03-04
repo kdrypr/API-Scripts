@@ -14,7 +14,7 @@ parser.add_argument("--blockedIP", help="Example: --blockedIP 1.2.3.4", required
 parser.add_argument("--vsys", help="Example: --vsys vsys1", required=True, default="vsys1")
 parser.add_argument("--commit", help="Example: --commit True", required=False, default="")
 parser.add_argument("--protocol", help="Example: --protocol https", required=True, default="https")
-parser.add_argument("--deletedIPName", help="Example: --deletedIPName SOC_BLOCKED_NMAP_SYN_1.1.1.1", required=False, default="")
+parser.add_argument("--deletedIPName", help="Example: --deletedIPName BLOCKED_NMAP_SYN_1.1.1.1", required=False, default="")
 parser.add_argument("--getIPS", help="Example: --getIPS True", required=False, default="")
 
 argument = parser.parse_args()
