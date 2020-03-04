@@ -3,6 +3,7 @@
 import json
 import requests
 import argparse
+requests.packages.urllib3.disable_warnings()
 
 parser = argparse.ArgumentParser(description="Description for Palo Alto API Script")
 parser.add_argument("--firstUsage", help="Example: --firstUsage True", required=False, default=False)
