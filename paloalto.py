@@ -11,7 +11,6 @@ parser.add_argument("--delete", help="Example: --delete True", required=False, d
 parser.add_argument("--server", help="Example: --server 192.168.1.1", required=True, default="")
 parser.add_argument("--userToken", help="Example: --userToken LUFRPT0=", required=True, default="")
 parser.add_argument("--blockedIP", help="Example: --blockedIP 1.2.3.4", required=False, default="")
-parser.add_argument("--alertName", help="Example: --alertName NMAP_SCAN", required=False, default="")
 parser.add_argument("--vsys", help="Example: --vsys vsys1", required=True, default="vsys1")
 parser.add_argument("--commit", help="Example: --commit True", required=False, default="")
 parser.add_argument("--protocol", help="Example: --protocol https", required=True, default="https")
@@ -22,13 +21,12 @@ argument = parser.parse_args()
 
 SERVER = argument.protocol + "://" + argument.server
 USER_TOKEN = argument.userToken
-ALERT_NAME = argument.alertName
 BLOCKED_IP = argument.blockedIP
 VSYS = argument.vsys
 
-BLOCKED_IP_NAME = "SOC_BLOCKED_" + ALERT_NAME + "_" + BLOCKED_IP
-FIREWALL_RULE_NAME = "SOC_BLOCKED_IPS"
-BLOCKED_IP_GROUP_NAME = "SOC_Blocked_IP_Lists"
+BLOCKED_IP_NAME = "BLOCKED_" + BLOCKED_IP
+FIREWALL_RULE_NAME = "BLOCKED_IPS"
+BLOCKED_IP_GROUP_NAME = "Blocked_IP_Lists"
 
 
 def detect_api_version():
