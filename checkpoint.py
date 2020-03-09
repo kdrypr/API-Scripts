@@ -4,6 +4,7 @@
 import json
 import requests
 import argparse
+from time import sleep
 
 requests.packages.urllib3.disable_warnings()
 
@@ -178,6 +179,7 @@ def publish():
 def main():
     if argument.firstUsage:
         create_ip_group_object()
+        sleep(3)
         add_policy_with_ip_group_object()
     elif argument.update:
         update_ip_group_object()
