@@ -15,9 +15,8 @@ parser.add_argument("--server", help="Example: --server 192.168.1.1", required=T
 parser.add_argument("--user", help="Example: --user admin", required=True, default="")
 parser.add_argument("--password", help="Example: --password testPass ", required=True, default="")
 parser.add_argument("--blockedIP", help="Example: --blockedIP 1.2.3.4", required=False, default="")
-parser.add_argument("--alertName", help="Example: --alertName NMAP_SCAN", required=False, default="")
 parser.add_argument("--protocol", help="Example: --protocol https", required=True, default="https")
-parser.add_argument("--deletedIPName", help="Example: --deletedIPName SOC_BLOCKED_NMAP_SYN_1.1.1.1", required=False,
+parser.add_argument("--deletedIPName", help="Example: --deletedIPName BLOCKED_NMAP_SYN_1.1.1.1", required=False,
                     default="")
 parser.add_argument("--getIPS", help="Example: --getIPS True", required=False, default="")
 
@@ -27,13 +26,12 @@ SERVER = argument.protocol + "://" + argument.server
 USER = argument.user
 PASSWORD = argument.password
 BASE_URL = "/web_api/"
-ALERT_NAME = argument.alertName
 BLOCKED_IP = argument.blockedIP
 DELETED_IP_NAME = argument.deletedIPName
 
-BLOCKED_IP_NAME = "SOC_BLOCKED_" + ALERT_NAME + "_" + BLOCKED_IP
-FIREWALL_RULE_NAME = "SOC_BLOCKED_IPS"
-BLOCKED_IP_GROUP_NAME = "SOC_Blocked_IP_List"
+BLOCKED_IP_NAME = "BLOCKED_" + BLOCKED_IP
+FIREWALL_RULE_NAME = "BLOCKED_IPS"
+BLOCKED_IP_GROUP_NAME = "Blocked_IP_List"
 
 
 def login():
