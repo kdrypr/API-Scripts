@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#Author: BEAM TEKNOLOJI A.S.
 
 import json
 import requests
