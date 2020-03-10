@@ -121,7 +121,7 @@ def remove_ip_from_group_object():
     payload = {
         "name": BLOCKED_IP_GROUP_NAME,
         "members": {
-            "remove": BLOCKED_IP_NAME
+            "remove": DELETED_IP_NAME
         }
     }
     request = requests.post(url=SERVER + BASE_URL + uri_suffix, data=json.dumps(payload), headers=headers, verify=False)
